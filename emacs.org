@@ -1,0 +1,50 @@
+#+TITLE: GNU/Emacs
+
+[[file:splash.png]]
+
+* Fundamentals: Essential keybindings
+
+~C-h ?~ Help for the help
+~C-h f~ Help about functions
+~C-h v~ Help about variables
+~M-x~   Execute interactive command by name
+~M-:~   Eval elisp
+* Fundamentals: Layout
+Buffer \in Window \in Frame
+
+*Echo Area*:
+special section at bottom of screen for messages
+
+#+BEGIN_SRC elisp
+(message "Hello world")
+#+END_SRC
+
+*Minibuffer*:
+special buffer for input prompts
+typically displayed in the echo area
+
+#+BEGIN_SRC elisp
+(read-from-minibuffer "Enter message: ")
+#+END_SRC
+* Fundamentals: Major and Minor Modes
+* Emacs Starter Kits
+*Prelude*: https://prelude.emacsredux.com
+
+*Spacemacs*:
+  Popular emacs distribution with many features
+  Evil-based (Vim keybindings)
+
+*Doom*:
+  similar to Spacemacs, less popular, faster startup
+* Extensions: How packages work
+#+BEGIN_SRC elisp
+
+#+END_SRC
+* Extensions: Configure packages
+*use-package*: concise way to setup autoloads, keybindings, etc
+ https://github.com/jwiegley/use-package
+
+#+BEGIN_SRC elisp
+(use-package )
+#+END_SRC
+* TODO The end
