@@ -1,19 +1,60 @@
-#+TITLE: GNU/Emacs
+
 
 [[file:splash.png]]
 
-* Fundamentals: Essential keybindings
+* What is Emacs
+
+Emacs is
+
+... ~a text editor~
+... ~a lisp programming environment~
+... ~a framework for text-based programs~
+
+Some useful keybindings:
 
 ~C-h ?~ Help for the help
 ~C-h f~ Help about functions
 ~C-h v~ Help about variables
-~M-x~   Execute interactive command by name
-~M-:~   Eval elisp
-* Fundamentals: Layout
+~C-h k~ Help for keys
+~M-x~ Execute interactive command
+~M-:~  Eval elisp
+
+* A simple example
+
+Insert a newline above the current
+line
+
+Let's write an emacs lisp function
+to do that.
+
+Bind our function to a key:
+#+BEGIN_SRC elisp
+(global-set-key
+ (kbd "<f10>")
+ 'my/insert-line
+ )
+#+END_SRC
+* Buffer Modes
+
+*Major Mode*:
+  one per buffer, main mode
+  ~python-mode~, ~c-mode~, etc.
+
+*Minor Mode*:
+  additional enhancements
+
+  there can be many minor modes
+  enabled at the same time
+
+~C-h m~ prints help about current mode
+
+* Some terminology
+
 Buffer \in Window \in Frame
 
 *Echo Area*:
-special section at bottom of screen for messages
+special section at bottom of screen
+for messages
 
 #+BEGIN_SRC elisp
 (message "Hello world")
@@ -24,27 +65,91 @@ special buffer for input prompts
 typically displayed in the echo area
 
 #+BEGIN_SRC elisp
-(read-from-minibuffer "Enter message: ")
+(read-from-minibuffer
+  "Enter message: ")
 #+END_SRC
-* Fundamentals: Major and Minor Modes
-* Emacs Starter Kits
-*Prelude*: https://prelude.emacsredux.com
 
-*Spacemacs*:
-  Popular emacs distribution with many features
+* Emacs Starter Kits
+
+*Prelude*:
+  https://prelude.emacsredux.com
+
+
+*Spacemacs*: https://spacemacs.org
+  Popular emacs distribution with
+  many features
+
   Evil-based (Vim keybindings)
 
-*Doom*:
-  similar to Spacemacs, less popular, faster startup
-* Extensions: How packages work
-#+BEGIN_SRC elisp
+*Doom*: GitHub[[ https://github.com/hlissner/doom-emacs][ hlissner/doom-emacs]]
+  similar to Spacemacs
+  less popular
+  faster startup
+* Package management
 
+~list-packages~ displays a list of packages
+
+You probably want to add MELPA as package archive:
+#+BEGIN_SRC elisp
+(require 'package)
+(add-to-list
+ 'package-archives
+ (cons "melpa" (concat proto "://melpa.org/packages/"))
+ t)
 #+END_SRC
-* Extensions: Configure packages
+
+Use ~package-install~ to install a new package
+
+Spacemacs and Doom have their own package management, see documentation
+* Configure packages
+
 *use-package*: concise way to setup autoloads, keybindings, etc
  https://github.com/jwiegley/use-package
 
+Example:
+
 #+BEGIN_SRC elisp
-(use-package )
+(use-package eziam-theme
+  :defer t
+  :init
+  (setq-default eziam-scale-headings nil)
+  (setq-default eziam-scale-other nil))
 #+END_SRC
-* TODO The end
+* org-mode
+"""
+/Org mode is for keeping notes,/
+/maintaining TODO lists,/
+/planning projects,/
+/and authoring documents with a/
+/fast and effective plain-text system./
+"""
+
+Quickly record notes with org-capture
+See also org-projectile
+* magit
+Git interface for emacs
+
+Do all git
+Easy interactive staging
+
+* undo-tree
+Have you ever wanted
+to undo undo?
+
+~undo-tree~ represents the
+branching structure of undo
+* pdf-tools
+Smooth pdf rendering
+
+Support synctex and annotations
+
+- jump to source location
+- jump to pdf location
+* And much more!
+IRC clients
+
+Web browsers
+
+Feed readers
+
+Games
