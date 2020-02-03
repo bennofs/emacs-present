@@ -115,6 +115,7 @@ Example:
   (setq-default eziam-scale-headings nil)
   (setq-default eziam-scale-other nil))
 #+END_SRC
+* Keymaps
 * org-mode
 """
 /Org mode is for keeping notes,/
@@ -127,11 +128,13 @@ Example:
 Quickly record notes with org-capture
 See also org-projectile
 * magit
+
 Git interface for emacs
 
-Do all git
-Easy interactive staging
+Do all git operations
+inside emacs
 
+Easy interactive staging
 * undo-tree
 Have you ever wanted
 to undo undo?
@@ -146,10 +149,11 @@ Support synctex and annotations
 - jump to source location
 - jump to pdf location
 * And much more!
-IRC clients
 
-Web browsers
-
-Feed readers
-
-Games
+- IRC clients
+- Web browsers
+- Feed readers
+- Mail clients
+- Games
+- TRAMP
+- EMMS (Emacs MultiMedia System)
