@@ -1,0 +1,17 @@
+* TODO emacs presentation
+<2020-02-06 Do 11:00>
+* Tables
+* Source code blocks
+
+#+NAME: random-ints
+#+BEGIN_SRC python :results list
+import random
+return [random.randint(0, 10) for _ in range(0, 10)]
+#+END_SRC
+
+#+BEGIN_SRC elisp :var input=random-ints
+(-sum input)
+#+END_SRC
+
+#+RESULTS:
+: 76

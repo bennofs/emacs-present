@@ -7,8 +7,8 @@
 Emacs is
 
 ... ~a text editor~
+... ~an IDE~
 ... ~a lisp programming environment~
-... ~a framework for text-based programs~
 
 Some useful keybindings:
 
@@ -18,7 +18,7 @@ Some useful keybindings:
 ~C-h v~ Help about variables
 ~C-h k~ Help for keys
 ~M-x~ Execute interactive command
-~M-:~  Eval elisp
+~M-:~  Eval elisp (Emacs Lisp)
 
 * A simple example
 
@@ -35,20 +35,6 @@ Bind our function to a key:
  'my/insert-line
  )
 #+END_SRC
-* Buffer Modes
-
-*Major Mode*:
-  one per buffer, main mode
-  ~python-mode~, ~c-mode~, etc.
-
-*Minor Mode*:
-  additional enhancements
-
-  there can be many minor modes
-  enabled at the same time
-
-~C-h m~ prints help about current mode
-
 * Some terminology
 
 Buffer \in Window \in Frame
@@ -69,6 +55,20 @@ typically displayed in the echo area
 (read-from-minibuffer
   "Enter message: ")
 #+END_SRC
+
+* Buffer Modes
+
+*Major Mode*:
+  one per buffer, main mode
+  ~python-mode~, ~c-mode~, etc.
+
+*Minor Mode*:
+  additional enhancements
+
+  there can be many minor modes
+  enabled at the same time
+
+~C-h m~ prints help about current mode
 
 * Emacs Starter Kits
 
@@ -116,7 +116,35 @@ Example:
   (setq-default eziam-scale-headings nil)
   (setq-default eziam-scale-other nil))
 #+END_SRC
-* Keymaps
+* Helm and Ivy
+
+Completion frameworks
+
+Provide fuzzy matching and
+a nice selection interface
+
+Ivy is simpler, Helm is more mature
+
+#+BEGIN_SRC shell :results output
+cd /code/swiper
+tokei
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+-------------------------------------------------------------------------------
+ Language            Files        Lines         Code     Comments       Blanks
+-------------------------------------------------------------------------------
+ Emacs Lisp             14        15792        13490          687         1615
+ Makefile                2           45           31            0           14
+ Markdown                1          141          141            0            0
+ Org                     4         7300         6434            0          866
+ Plain Text              2         1125         1125            0            0
+-------------------------------------------------------------------------------
+ Total                  23        24403        21221          687         2495
+-------------------------------------------------------------------------------
+#+end_example
+
 * org-mode
 """
 /Org mode is for keeping notes,/
@@ -137,12 +165,17 @@ inside emacs
 
 Easy interactive staging
 * undo-tree
+
 Have you ever wanted
 to undo undo?
 
 ~undo-tree~ represents the
 branching structure of undo
+
+Persistent undo is also a
+cool feature
 * pdf-tools
+
 Smooth pdf rendering
 
 Support synctex and annotations
@@ -158,3 +191,5 @@ Support synctex and annotations
 - Games
 - TRAMP
 - EMMS (Emacs MultiMedia System)
+
+  https://github.com/bennofs/emacs-present/
