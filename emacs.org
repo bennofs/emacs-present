@@ -12,6 +12,7 @@ Emacs is
 
 Some useful keybindings:
 
+~C-x C-f~ "find-file" (Open files)
 ~C-h ?~ Help for the help
 ~C-h f~ Help about functions
 ~C-h v~ Help about variables
